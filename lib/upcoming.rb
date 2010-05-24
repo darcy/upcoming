@@ -19,8 +19,8 @@ module Upcoming
 
   class UpcomingConfig
     @view_dir = "upcoming"
-    
     @environments = ['development']
+    
     class << self 
       attr_accessor :environments
       attr_accessor :view_dir
