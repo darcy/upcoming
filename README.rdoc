@@ -1,0 +1,47 @@
+= Upcoming
+
+Based on the same idea as MileMarker (http://github.com/thoughtbot/mile_marker), which didn't do exactly what I needed. However, much of this code was inspired or taken from that project.
+
+This will render a block if you are in a development type environment and will leave it out if not. 
+
+
+== Example
+
+  <% upcoming(:title => "Mile 5") do %>
+    <p>Some new feature to be released</p>
+    <% end %>
+
+This would result in no code showing up in production/staging. But in development would wrap into:
+
+  <div class='upcoming'><p class="upcoming-title">Mile 5</p>
+    <p>Some new feature to be released</p>
+  </div>
+
+The css allows you your own styling, but there is a default installed with the plugin.
+
+To make the blocks show up in environments other than development, just add:
+
+  Upcoming::UpcomingConfig.environments=%w(development staging)
+
+to your initializers.
+
+This is based on Rails' engines support in 2.3, so to customize the rendering, just create a folder 'upcoming' in your app dir and override the _upcoming partial there. You can also set the view dir to be something else like 'shared' or 'common' like so:
+
+  Upcoming::UpcomingConfig.view_dir="shared"
+
+
+== Requirements
+
+jquery, Rails >= 2.3
+
+
+== Credits
+
+MileMarker:
+
+http://github.com/thoughtbot/mile_marker
+http://github.com/jasonm/mile_marker
+
+
+
+Copyright (c) 2010 Darcy Brown, released under the MIT license

@@ -1,0 +1,28 @@
+<script type="text/javascript">
+  //<![CDATA[
+
+  function init_upcoming() {
+    $('div.upcoming-overlay').each(function() {
+
+      var overlay_element = $(this);
+      var el = overlay_element.prev();
+      
+      //set the height
+      var height = $(el).height();
+      var width = $(el).width();
+
+      //set the position
+      var pos = $(el).position();
+      $(overlay_element).css("top", pos.top);
+      $(overlay_element).css("left", pos.left);
+
+      $(overlay_element).height(height);
+      $(overlay_element).width(width);
+    });
+  }
+
+  $(document).ready(init_upcoming);
+
+  //]]>
+</script>
+
