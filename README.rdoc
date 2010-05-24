@@ -33,7 +33,7 @@ This is based on Rails' engines support in 2.3, so to customize the rendering, j
 
 == Requirements
 
-  jquery
+  jquery (but you can change this easily by overriding upcoming_js.html.erb)
   Rails >= 2.3
 
 
