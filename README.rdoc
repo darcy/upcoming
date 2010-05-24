@@ -30,6 +30,17 @@ This is based on Rails' engines support in 2.3, so to customize the rendering, j
 
   Upcoming::UpcomingConfig.view_dir="shared"
 
+Additionally, you can specify a prefix to use for all:
+
+  Upcoming::UpcomingConfig.prefix="Mile "
+
+Then using:
+
+  <% upcoming(5) do %>
+    <p>Some new feature to be released</p>
+  <% end %>
+
+Would result the same as above.
 
 == Requirements
 
